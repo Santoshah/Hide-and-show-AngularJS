@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hide and show with ng-hide and ng-show directive | Angular JS</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body ng-app="myModule" ng-controller="myController">
+	Hide Salary <input type="checkbox" ng-model="salary_hide">
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Employee ID</th>
+				<th ng-hide="salary_hide">Salary</th>
+				<th ng-show="salary_hide">Salary</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="employee in employees">
+				<td>{{employee.name}}</td>
+				<td>{{employee.emp_id}}</td>
+				<td ng-hide="salary_hide">{{employee.salary}}</td>
+				<td ng-show="salary_hide">*****</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+</body>
+</html>
